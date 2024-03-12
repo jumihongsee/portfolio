@@ -1,0 +1,787 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@font-face {
+  font-family: "helvetical-light";
+  src: url("../fonts/Helvetica-Light.woff");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "helvetical-normal";
+  src: url("../fonts/Helvetica-Normal.woff");
+  font-weight: bold;
+}
+@font-face {
+  font-family: "helvetical-bold";
+  src: url("../fonts/Helvetica-Bold.woff");
+  font-weight: bold;
+}
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: #000;
+}
+body header {
+  position: fixed;
+  width: 100vw;
+  top: 0;
+  z-index: 100;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+body header .logo {
+  width: auto;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0 0 20px;
+  text-align: center;
+  position: relative;
+  z-index: 100;
+}
+body header .logo p {
+  color: rgb(128, 128, 128);
+  font-size: 15px;
+  transition: opacity 0.5s ease;
+}
+body header .ham {
+  width: 30px;
+  height: 35px;
+  position: absolute;
+  z-index: 100;
+  top: 30px;
+  right: 20px;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+}
+body header .ham span {
+  display: block;
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  background: rgb(128, 128, 128);
+  opacity: 1;
+  left: 0;
+  transition: 0.25s ease-in-out;
+  transform-origin: left center;
+}
+body header .ham span:nth-child(1) {
+  top: 0px;
+}
+body header .ham span:nth-child(2) {
+  top: 9px;
+}
+body header .ham span:nth-child(3) {
+  top: 19px;
+}
+body header .ham.on {
+  width: 30px;
+}
+body header .ham.on span:nth-child(1) {
+  transform: rotate(45deg);
+  top: -3px;
+  left: 8px;
+}
+body header .ham.on span:nth-child(2) {
+  width: 0%;
+  opacity: 0;
+}
+body header .ham.on span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 19px;
+  left: 8px;
+}
+body header .menuContents {
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  background: #000;
+  display: none;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 50;
+}
+body header .menuContents .cont {
+  border-right: 1px solid #333;
+  width: 33.3333333333%;
+  height: 0;
+  z-index: 1000;
+  transition: all 0.5s forwards;
+}
+body main {
+  width: 100vw;
+  height: 100vh;
+}
+body main .main-effect {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
+body main .main-effect .main-parallax {
+  width: 22vw;
+  height: 22vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body main .main-effect .main-parallax .line4 > div {
+  width: 200vw;
+  height: 1px;
+  background: rgb(56, 56, 56);
+  position: absolute;
+}
+body main .main-effect .main-parallax .line4 > div.top-left {
+  left: -100vw;
+  top: 0;
+  transform: rotate(45deg);
+}
+body main .main-effect .main-parallax .line4 > div.top-right {
+  right: -100vw;
+  top: 0;
+  transform: rotate(-45deg);
+}
+body main .main-effect .main-parallax .box {
+  position: fixed;
+  background-position: top center;
+  background-size: cover;
+  perspective: 400px;
+  width: 30vw;
+  height: 30vw;
+  min-width: 200px;
+  min-height: 200px;
+  border: 1px solid rgb(56, 56, 56);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body main .main-effect .main-parallax .box.mainTitle.active {
+  animation: opacityAdjust 0.4s ease forwards;
+}
+body main .main-effect .main-parallax .box.mainTitle h2 {
+  color: #fff;
+  font-size: 3vw;
+  font-weight: 100;
+  width: 30vw;
+  height: 30vw;
+  min-width: 200px;
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 25px;
+  transition: letter-spacing ease 1s;
+  background: #000;
+}
+body main .main-effect .main-parallax .box.mainTitle h2 span {
+  display: block;
+}
+body main .main-effect .main-parallax .box.mainTitle h2 span.scale-up-appear {
+  opacity: 0;
+  display: none;
+  transition: display 1s ease-in-out;
+}
+body main .main-effect .main-parallax .box.mainTitle h2 span.scale-up-appear.active {
+  opacity: 1;
+  display: block;
+  animation: appearText forwards;
+}
+body main .main-effect .main-parallax .box.mainTitle h2 span.scale-up-disappear {
+  opacity: 1;
+  display: block;
+  transition: display 1s ease-in-out;
+}
+body main .main-effect .main-parallax .box.mainTitle h2 span.scale-up-disappear.active {
+  opacity: 0;
+  display: none;
+  animation: appearText reverse forwards;
+}
+body main .main-effect .main-parallax .box.mainTitle h2.active {
+  letter-spacing: 0;
+  font-weight: 500;
+}
+body main .main-effect .main-parallax .blink_zoom div {
+  position: absolute;
+  width: 3vw;
+  height: 3vw;
+}
+@media (max-width : 500px) {
+  body main .main-effect .main-parallax .blink_zoom div {
+    width: 25px;
+    height: 25px;
+  }
+}
+body main .main-effect .main-parallax .blink_zoom div.top {
+  right: -10px;
+  top: -10px;
+  border-top: 2px solid #444;
+  border-right: 2px solid #222;
+  animation: blink_main_top 2s ease-in-out infinite;
+}
+body main .main-effect .main-parallax .blink_zoom div.bottom {
+  bottom: -10px;
+  left: -10px;
+  border-left: 2px solid #444;
+  border-bottom: 2px solid #222;
+  animation: blink_main_bottom 2s ease-in-out infinite;
+}
+body main .main-effect .main-parallax .blink_zoom div.left {
+  left: -10px;
+  top: -10px;
+  border-top: 2px solid #444;
+  border-left: 2px solid #222;
+  animation: blink_main_left 2s ease-in-out infinite;
+}
+body main .main-effect .main-parallax .blink_zoom div.right {
+  right: -10px;
+  bottom: -10px;
+  border-bottom: 2px solid #444;
+  border-right: 2px solid #222;
+  animation: blink_main_right 2s ease-in-out infinite;
+}
+body section {
+  position: relative;
+  z-index: 100;
+  height: 100vh;
+  border: 3px solid #f00;
+}
+body section.about {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+body section.about .top-effect-section {
+  width: 25vw;
+  height: 25vw;
+  margin-top: 10vh;
+  padding: 20vh 0 0 0;
+  margin-left: 10vw;
+  position: relative;
+  background: #000;
+  border: 1px solid #333;
+  overflow: hidden;
+}
+body section.about .top-effect-section:hover {
+  background: rgb(0, 34, 255);
+}
+body section.about .top-effect-section:hover img {
+  transform: scale(1.3);
+  filter: grayscale(60%);
+}
+body section.about .top-effect-section:hover .deco {
+  border: 1px solid #000;
+}
+body section.about .top-effect-section img {
+  height: 80%;
+  filter: grayscale(90%);
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  right: 0;
+  transition: all 0.5s ease;
+}
+body section.about .top-effect-section .deco {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 92%;
+  height: 92%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #666;
+  animation: opacityAdjust 3s ease infinite;
+}
+body section.about .top-effect-section .deco:nth-child(1) {
+  animation-delay: 0.05s;
+}
+body section.about .top-effect-section .deco:nth-child(2) {
+  animation-delay: 0.1s;
+}
+body section.about .top-effect-section .deco:nth-child(3) {
+  animation-delay: 0.15s;
+}
+body section.about .top-effect-section .deco:nth-child(4) {
+  animation-delay: 0.2s;
+}
+body section.about .top-effect-section .deco:nth-child(5) {
+  animation-delay: 0.25s;
+}
+body section.about .top-effect-section .deco:nth-child(6) {
+  animation-delay: 0.3s;
+}
+body section.about .top-effect-section .deco:nth-child(7) {
+  animation-delay: 0.35s;
+}
+body section.about .top-effect-section .deco:nth-child(8) {
+  animation-delay: 0.4s;
+}
+body section.about .top-effect-section .deco:nth-child(9) {
+  animation-delay: 0.45s;
+}
+body section.about .top-effect-section .deco:nth-child(10) {
+  animation-delay: 0.5s;
+}
+body section.about .top-effect-section .deco:nth-child(11) {
+  animation-delay: 0.55s;
+}
+body section.about .top-effect-section .deco:nth-child(12) {
+  animation-delay: 0.6s;
+}
+body section.about .top-effect-section .deco:nth-child(13) {
+  animation-delay: 0.65s;
+}
+body section.about .top-effect-section .deco:nth-child(14) {
+  animation-delay: 0.7s;
+}
+body section.about .top-effect-section .deco:nth-child(15) {
+  animation-delay: 0.75s;
+}
+body section.about .top-effect-section .deco:nth-child(16) {
+  animation-delay: 0.8s;
+}
+body section.about .top-effect-section .deco:nth-child(17) {
+  animation-delay: 0.85s;
+}
+body section.about .top-effect-section .deco:nth-child(18) {
+  animation-delay: 0.9s;
+}
+body section.about .top-effect-section .deco:nth-child(19) {
+  animation-delay: 0.95s;
+}
+body section.about .top-effect-section .deco:nth-child(20) {
+  animation-delay: 1s;
+}
+body section.about .top-effect-section .deco:nth-child(21) {
+  animation-delay: 1.05s;
+}
+body section.about .top-effect-section .deco:nth-child(22) {
+  animation-delay: 1.1s;
+}
+body section.about .top-effect-section .deco:nth-child(23) {
+  animation-delay: 1.15s;
+}
+body section.about .top-effect-section .deco:nth-child(24) {
+  animation-delay: 1.2s;
+}
+body section.about .top-effect-section .deco:nth-child(25) {
+  animation-delay: 1.25s;
+}
+body section.about .top-effect-section .deco:nth-child(26) {
+  animation-delay: 1.3s;
+}
+body section.about .top-effect-section .deco:nth-child(27) {
+  animation-delay: 1.35s;
+}
+body section.about .top-effect-section .deco:nth-child(28) {
+  animation-delay: 1.4s;
+}
+body section.about .top-effect-section .deco:nth-child(29) {
+  animation-delay: 1.45s;
+}
+body section.about .top-effect-section .deco:nth-child(30) {
+  animation-delay: 1.5s;
+}
+body section.about .top-effect-section .deco:nth-child(31) {
+  animation-delay: 1.55s;
+}
+body section.about .top-effect-section .deco:nth-child(32) {
+  animation-delay: 1.6s;
+}
+body section.about .top-effect-section .deco:nth-child(33) {
+  animation-delay: 1.65s;
+}
+body section.about .top-effect-section .deco:nth-child(34) {
+  animation-delay: 1.7s;
+}
+body section.about .top-effect-section .deco:nth-child(35) {
+  animation-delay: 1.75s;
+}
+body section.about .top-effect-section .deco:nth-child(36) {
+  animation-delay: 1.8s;
+}
+body section.about .top-effect-section .deco:nth-child(37) {
+  animation-delay: 1.85s;
+}
+body section.about .top-effect-section .deco:nth-child(38) {
+  animation-delay: 1.9s;
+}
+body section.about .top-effect-section .deco:nth-child(39) {
+  animation-delay: 1.95s;
+}
+body section.about .top-effect-section .deco:nth-child(40) {
+  animation-delay: 2s;
+}
+body section.about .top-effect-section .deco:nth-child(41) {
+  animation-delay: 2.05s;
+}
+body section.about .top-effect-section .deco:nth-child(42) {
+  animation-delay: 2.1s;
+}
+body section.about .top-effect-section .deco:nth-child(43) {
+  animation-delay: 2.15s;
+}
+body section.about .top-effect-section .deco:nth-child(44) {
+  animation-delay: 2.2s;
+}
+body section.about .top-effect-section .deco:nth-child(45) {
+  animation-delay: 2.25s;
+}
+body section.about .top-effect-section .deco:nth-child(46) {
+  animation-delay: 2.3s;
+}
+body section.about .top-effect-section .deco:nth-child(47) {
+  animation-delay: 2.35s;
+}
+body section.about .top-effect-section .deco:nth-child(48) {
+  animation-delay: 2.4s;
+}
+body section.about .top-effect-section .deco:nth-child(49) {
+  animation-delay: 2.45s;
+}
+body section.about .top-effect-section .deco:nth-child(50) {
+  animation-delay: 2.5s;
+}
+body section.about .top-effect-section .deco:nth-child(51) {
+  animation-delay: 2.55s;
+}
+body section.about .top-effect-section .deco:nth-child(52) {
+  animation-delay: 2.6s;
+}
+body section.about .top-effect-section .deco:nth-child(53) {
+  animation-delay: 2.65s;
+}
+body section.about .top-effect-section .deco:nth-child(54) {
+  animation-delay: 2.7s;
+}
+body section.about .top-effect-section .deco:nth-child(55) {
+  animation-delay: 2.75s;
+}
+body section.about .top-effect-section .deco:nth-child(56) {
+  animation-delay: 2.8s;
+}
+body section.about .top-effect-section .deco:nth-child(57) {
+  animation-delay: 2.85s;
+}
+body section.about .top-effect-section .deco:nth-child(58) {
+  animation-delay: 2.9s;
+}
+body section.about .top-effect-section .deco:nth-child(59) {
+  animation-delay: 2.95s;
+}
+body section.about .top-effect-section .deco:nth-child(60) {
+  animation-delay: 3s;
+}
+body section.about .top-effect-section .deco:nth-child(61) {
+  animation-delay: 3.05s;
+}
+body section.about .top-effect-section .deco:nth-child(62) {
+  animation-delay: 3.1s;
+}
+body section.about .top-effect-section .deco:nth-child(63) {
+  animation-delay: 3.15s;
+}
+body section.about .top-effect-section .deco:nth-child(64) {
+  animation-delay: 3.2s;
+}
+body section.about .top-effect-section .deco:nth-child(65) {
+  animation-delay: 3.25s;
+}
+body section.about .top-effect-section .deco:nth-child(66) {
+  animation-delay: 3.3s;
+}
+body section.about .top-effect-section .deco:nth-child(67) {
+  animation-delay: 3.35s;
+}
+body section.about .top-effect-section .deco:nth-child(68) {
+  animation-delay: 3.4s;
+}
+body section.about .top-effect-section .deco:nth-child(69) {
+  animation-delay: 3.45s;
+}
+body section.about .top-effect-section .deco:nth-child(70) {
+  animation-delay: 3.5s;
+}
+body section.about .top-effect-section .deco:nth-child(71) {
+  animation-delay: 3.55s;
+}
+body section.about .top-effect-section .deco:nth-child(72) {
+  animation-delay: 3.6s;
+}
+body section.about .top-effect-section .deco:nth-child(73) {
+  animation-delay: 3.65s;
+}
+body section.about .top-effect-section .deco:nth-child(74) {
+  animation-delay: 3.7s;
+}
+body section.about .top-effect-section .deco:nth-child(75) {
+  animation-delay: 3.75s;
+}
+body section.about .top-effect-section .deco:nth-child(76) {
+  animation-delay: 3.8s;
+}
+body section.about .top-effect-section .deco:nth-child(77) {
+  animation-delay: 3.85s;
+}
+body section.about .top-effect-section .deco:nth-child(78) {
+  animation-delay: 3.9s;
+}
+body section.about .top-effect-section .deco:nth-child(79) {
+  animation-delay: 3.95s;
+}
+body section.about .top-effect-section .deco:nth-child(80) {
+  animation-delay: 4s;
+}
+body section.about .top-effect-section .deco:nth-child(81) {
+  animation-delay: 4.05s;
+}
+body section.about .top-effect-section .deco:nth-child(82) {
+  animation-delay: 4.1s;
+}
+body section.about .top-effect-section .deco:nth-child(83) {
+  animation-delay: 4.15s;
+}
+body section.about .top-effect-section .deco:nth-child(84) {
+  animation-delay: 4.2s;
+}
+body section.about .top-effect-section .deco:nth-child(85) {
+  animation-delay: 4.25s;
+}
+body section.about .top-effect-section .deco:nth-child(86) {
+  animation-delay: 4.3s;
+}
+body section.about .top-effect-section .deco:nth-child(87) {
+  animation-delay: 4.35s;
+}
+body section.about .top-effect-section .deco:nth-child(88) {
+  animation-delay: 4.4s;
+}
+body section.about .top-effect-section .deco:nth-child(89) {
+  animation-delay: 4.45s;
+}
+body section.about .top-effect-section .deco:nth-child(90) {
+  animation-delay: 4.5s;
+}
+body section.about .top-effect-section .deco:nth-child(91) {
+  animation-delay: 4.55s;
+}
+body section.about .top-effect-section .deco:nth-child(92) {
+  animation-delay: 4.6s;
+}
+body section.about .top-effect-section .deco:nth-child(93) {
+  animation-delay: 4.65s;
+}
+body section.about .top-effect-section .deco:nth-child(94) {
+  animation-delay: 4.7s;
+}
+body section.about .top-effect-section .deco:nth-child(95) {
+  animation-delay: 4.75s;
+}
+body section.about .top-effect-section .deco:nth-child(96) {
+  animation-delay: 4.8s;
+}
+body section.about .top-effect-section .deco:nth-child(97) {
+  animation-delay: 4.85s;
+}
+body section.about .top-effect-section .deco:nth-child(98) {
+  animation-delay: 4.9s;
+}
+body section.about .top-effect-section .deco:nth-child(99) {
+  animation-delay: 4.95s;
+}
+body section.about .top-effect-section .deco:nth-child(100) {
+  animation-delay: 5s;
+}
+body section.about .top-effect-section .deco:nth-child(3) {
+  width: 90%;
+  height: 90%;
+}
+body section.about .top-effect-section .deco:nth-child(4) {
+  width: 88%;
+  height: 88%;
+}
+body section.about .top-effect-section .deco:nth-child(5) {
+  width: 86%;
+  height: 86%;
+}
+body section.about .top-effect-section .deco:nth-child(6) {
+  width: 84%;
+  height: 84%;
+}
+body section.about .top-effect-section .deco:nth-child(7) {
+  width: 82%;
+  height: 82%;
+}
+body section.about .top-effect-section .deco:nth-child(8) {
+  width: 80%;
+  height: 80%;
+}
+body section.about .top-effect-section .deco:nth-child(9) {
+  width: 78%;
+  height: 78%;
+}
+body section.about .top-effect-section .deco:nth-child(10) {
+  width: 76%;
+  height: 76%;
+}
+body section.about .top-effect-section .deco:nth-child(11) {
+  width: 74%;
+  height: 74%;
+}
+body section.about .top-effect-section .deco:nth-child(12) {
+  width: 72%;
+  height: 72%;
+}
+body section.about .top-effect-section .deco:nth-child(13) {
+  width: 70%;
+  height: 70%;
+}
+body section.about .top-effect-section .deco:nth-child(14) {
+  width: 68%;
+  height: 68%;
+}
+body .contact {
+  position: fixed;
+  bottom: 0;
+  height: auto;
+  left: 50%;
+  transform: translate(-50%, calc(100% - 40px));
+  height: 100vh;
+}
+body .contact button {
+  color: #000;
+  background: #fff;
+  font-family: "helvetical-bold";
+  font-size: 18px;
+  height: 40px;
+  width: 200px;
+  font-weight: 100;
+}
+body .contact .cont {
+  background: rgb(128, 128, 128);
+  position: absolute;
+  height: calc(100% - 40px);
+  width: 50vw;
+  border-radius: 0 20px 0 0;
+}
+body .contact.active {
+  animation: contactUp 1s ease forwards;
+}
+body footer {
+  color: rgb(128, 128, 128);
+  position: fixed;
+  bottom: 30px;
+  right: 20px;
+  font-size: 13px;
+}
+@media (max-width : 500px) {
+  body footer {
+    bottom: 50px;
+    text-align: center;
+    width: 100%;
+    right: auto;
+    font-size: 12px;
+  }
+}
+
+@keyframes blink_main_top {
+  0% {
+    right: -10px;
+    top: -10px;
+    opacity: 0;
+  }
+  50% {
+    right: -20px;
+    top: -20px;
+    opacity: 1;
+  }
+  100% {
+    right: -10px;
+    top: -10px;
+    opacity: 0;
+  }
+}
+@keyframes blink_main_bottom {
+  0% {
+    left: -10px;
+    bottom: -10px;
+    opacity: 0;
+  }
+  50% {
+    left: -20px;
+    bottom: -20px;
+    opacity: 1;
+  }
+  100% {
+    left: -10px;
+    bottom: -10px;
+    opacity: 0;
+  }
+}
+@keyframes blink_main_left {
+  0% {
+    left: -10px;
+    top: -10px;
+    opacity: 0;
+  }
+  50% {
+    left: -20px;
+    top: -20px;
+    opacity: 1;
+  }
+  100% {
+    left: -10px;
+    top: -10px;
+    opacity: 0;
+  }
+}
+@keyframes blink_main_right {
+  0% {
+    right: -10px;
+    bottom: -10px;
+    opacity: 0;
+  }
+  50% {
+    right: -20px;
+    bottom: -20px;
+    opacity: 1;
+  }
+  100% {
+    right: -10px;
+    bottom: -10px;
+    opacity: 0;
+  }
+}
+@keyframes appearText {
+  0% {
+    display: none;
+  }
+  100% {
+    display: block;
+  }
+}
+@keyframes contactUp {
+  0% {
+    transform: translate(-50%, calc(100% - 40px));
+  }
+  100% {
+    transform: translate(-50%, 0px);
+  }
+}
+@keyframes opacityAdjust {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
