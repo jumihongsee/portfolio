@@ -11,7 +11,7 @@ function raf(time) {
 
 requestAnimationFrame(raf)
 
-
+  
 const ham = document.querySelector('.ham');
 const header = document.querySelector('header')
 const contact = document.querySelector('.contact')

@@ -1,0 +1,176 @@
+* {
+  color: #fff;
+}
+
+html {
+  background: #000;
+}
+
+body .music {
+  position: fixed;
+  width: 30px;
+  height: 30px;
+  top: 60px;
+  z-index: 99;
+  right: 47px;
+}
+body .frame {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+body .frame ul {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+body .frame ul li {
+  width: 13px;
+  height: 8px;
+  background: #222;
+  border-radius: 2px;
+}
+body .frame ul li.active {
+  background: rgb(175, 175, 175);
+}
+body .frame .top {
+  width: 100%;
+  height: 40px;
+  position: absolute;
+  background: #000;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  position: fixed;
+}
+body .frame .left, body .frame .right {
+  width: 7%;
+  height: calc(100% - 40px);
+  min-height: 17px;
+  z-index: 1;
+  margin-top: 40px;
+  position: fixed;
+  background: #000;
+}
+body .frame .left {
+  left: 0;
+}
+body .frame .right {
+  right: 0;
+}
+body .frame .right {
+  right: 0;
+}
+body .frame .bottom {
+  position: absolute;
+  width: 100%;
+  height: 150px;
+  z-index: 1;
+  background: #000;
+  bottom: 0;
+  left: 0;
+  padding: 7%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+body .frame .bottom .title h2 {
+  font-size: 20px;
+}
+body .frame .bottom .title p {
+  font-size: 18px;
+}
+body main {
+  width: 100vw;
+  height: auto;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+body main section {
+  background: #fff;
+  width: 86%;
+  height: 100vh;
+  position: relative;
+}
+body main section div {
+  width: 100%;
+  height: 100%;
+}
+body main section div.contents {
+  width: 100%;
+  height: calc(100% - 40px);
+  background-size: cover;
+  position: relative;
+  background-position: 50% 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body main section div.contents:after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+}
+body main section div.contents > div {
+  position: relative;
+  z-index: 100;
+}
+body main section div.contents .contents-wrapper {
+  height: 50%;
+  padding: 0 10px;
+}
+body main section div.contents .contents-wrapper h2 {
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 40px;
+}
+body main section div.contents .contents-wrapper p {
+  font-size: 14px;
+  line-height: 2.3;
+  margin: 20px 0;
+}
+body main section div.bottom-deco {
+  height: 40px;
+  width: 100%;
+  background: #000;
+  position: relative;
+  z-index: 100;
+}
+body main section:nth-child(1) div.contents {
+  background-image: url(../img/yooyeon-section-background-3.jpg);
+  background-position: 30% 50%;
+}
+body main section:nth-child(1) div.contents:after {
+  opacity: 0.5;
+}
+body main section:nth-child(2) div.contents {
+  background-image: url(../img/yooyeon-section-background-4.png);
+  background-position: 50% 50%;
+}
+body main section:nth-child(2) div.contents:after {
+  opacity: 0.6;
+}
+
+@keyframes opacityAndTransX {
+  0% {
+    background-position: 50% 50%;
+  }
+  50% {
+    background-position: 70% 50%;
+  }
+  100% {
+    background-position: 50% 50%;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

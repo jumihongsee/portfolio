@@ -41,7 +41,7 @@ body{
         .logo{
             width: auto; height: 50px; 
             display: flex; align-items:  center; justify-content: center;
-            margin: 20px 0 0 20px; text-align: center;  position: relative; z-index: 100;
+            margin: 0 0 0 20px; text-align: center;  position: relative; z-index: 100;
             p{
                 color:  rgba(128, 128, 128, 1); font-size: 15px; 
                 transition: opacity 0.5s ease;
@@ -117,216 +117,167 @@ body{
     main{
         width: 100vw;
         height: 100vh;
-
-        .main-effect{
-            position: fixed; width: 100vw; height: 100vh;
-            .main-parallax{
-                width: 22vw; height: 22vw;
-                position: absolute; top: 50%; left: 50%;
-                transform: translate(-50%,-50%); 
-                display: flex; align-items: center; justify-content: center;
-
-                .line4{
-                    > div{
-                        width: 200vw;
-                        height: 1px;
-                        background: rgb(56, 56, 56);
-                        position: absolute;
-                        &.top-left{
-                            left: -100vw;
-                            top: 0;
-                            transform: rotate(45deg);
-                        }
-                        &.top-right{
-                            right: -100vw;
-                            top: 0;
-                            transform: rotate(-45deg);
-                        }
-                    }
-
-                }
-                .box{
-                    position: fixed;
-                    background-position: top center;
-                    background-size: cover;
-                    perspective: 400px;
-                    width: 30vw;height: 30vw;
-                    min-width: 200px; min-height: 200px;
-                    border: 1px solid rgb(56, 56, 56);
+        section{
+            &.main-effect{
+                position: fixed; width: 100vw; height: 100vh;
+                .main-parallax{
+                    width: 22vw; height: 22vw;
+                    position: absolute; top: 50%; left: 50%;
+                    transform: translate(-50%,-50%); 
                     display: flex; align-items: center; justify-content: center;
-
-
-                    &.mainTitle{
-                        &.active{
-                            animation: opacityAdjust .4s ease forwards;
-                        }
-                        
-                        h2{
-                            color:  #fff; font-size: 3vw; font-weight: 100;
-                            width: 30vw; height: 30vw; min-width: 200px; min-height: 200px;
-                            display: flex; align-items: center; justify-content: center; letter-spacing: 25px;
-                            transition: letter-spacing ease 1s; background: #000;
-
-                            span{
-                                display: block;
-                                &.scale-up-appear{
-                                    opacity: 0; display: none; transition: display 1s ease-in-out;
-                              
-                                    &.active{
-                                        opacity: 1; display: block;
-                                        animation: appearText  forwards;
-                                    }
-                                }
-                                &.scale-up-disappear{
-                                    opacity: 1; display: block; transition: display 1s ease-in-out;
-                             
-                                    &.active{
-                                        opacity: 0; display: none;
-                                        animation: appearText reverse forwards;
-                                    }
-                    
-                                }
+    
+                    .line4{
+                        > div{
+                            width: 200vw;
+                            height: 1px;
+                            background: rgb(56, 56, 56);
+                            position: absolute;
+                            &.top-left{
+                                left: -100vw;
+                                top: 0;
+                                transform: rotate(45deg);
                             }
+                            &.top-right{
+                                right: -100vw;
+                                top: 0;
+                                transform: rotate(-45deg);
+                            }
+                        }
+    
+                    }
+                    .box{
+                        position: fixed;
+                        background-position: top center;
+                        background-size: cover;
+                        perspective: 400px;
+                        width: 30vw;height: 30vw;
+                        min-width: 200px; min-height: 200px;
+                        border: 1px solid rgb(56, 56, 56);
+                        display: flex; align-items: center; justify-content: center;
+    
+    
+                        &.mainTitle{
                             &.active{
-                                letter-spacing: 0;
-                                font-weight: 500;
+                                animation: opacityAdjust .4s ease forwards;
                             }
                             
+                            h2{
+                                color:  #fff; font-size: 3vw; font-weight: 100;
+                                width: 30vw; height: 30vw; min-width: 200px; min-height: 200px;
+                                display: flex; align-items: center; justify-content: center; letter-spacing: 25px;
+                                transition: letter-spacing ease 1s; background: #000;
+    
+                                span{
+                                    display: block;
+                                    &.scale-up-appear{
+                                        opacity: 0; display: none; transition: display 1s ease-in-out;
+                                  
+                                        &.active{
+                                            opacity: 1; display: block;
+                                            animation: appearText  forwards;
+                                        }
+                                    }
+                                    &.scale-up-disappear{
+                                        opacity: 1; display: block; transition: display 1s ease-in-out;
+                                 
+                                        &.active{
+                                            opacity: 0; display: none;
+                                            animation: appearText reverse forwards;
+                                        }
+                        
+                                    }
+                                }
+                                &.active{
+                                    letter-spacing: 0;
+                                    font-weight: 500;
+                                }
+                                
+                            }
+                         
                         }
+                    }
+                    .blink_zoom{
+                        div{
+                            position: absolute;
+                            width: 3vw; height: 3vw;
+                            @media #{$mobile} {
+                                width: 25px; height: 25px;
+              
+                            }
+                            &.top{
+                                right: -10px;
+                                top: -10px;
+                                border-top: 2px solid #444;
+                                border-right: 2px solid #222;
+                                animation: blink_main_top 2s ease-in-out infinite;
+                            }
+                            &.bottom{
+                                bottom: -10px;
+                                left: -10px;
+                                border-left: 2px solid #444;
+                                border-bottom: 2px solid #222;
+                                animation: blink_main_bottom 2s ease-in-out infinite;
+                            }
+                            &.left{
+                                left: -10px;
+                                top: -10px;
+                                border-top: 2px solid #444;
+                                border-left: 2px solid #222;
+                                animation: blink_main_left 2s ease-in-out infinite;
                      
+                            }
+                            &.right{
+                                right: -10px;
+                                bottom: -10px;
+                                border-bottom: 2px solid #444;
+                                border-right: 2px solid #222;
+                                animation: blink_main_right 2s ease-in-out infinite;
+                            }
+                        }
+               
                     }
-                }
-                .blink_zoom{
-                    div{
-                        position: absolute;
-                        width: 3vw; height: 3vw;
-                        @media #{$mobile} {
-                            width: 25px; height: 25px;
-          
-                        }
-                        &.top{
-                            right: -10px;
-                            top: -10px;
-                            border-top: 2px solid #444;
-                            border-right: 2px solid #222;
-                            animation: blink_main_top 2s ease-in-out infinite;
-                        }
-                        &.bottom{
-                            bottom: -10px;
-                            left: -10px;
-                            border-left: 2px solid #444;
-                            border-bottom: 2px solid #222;
-                            animation: blink_main_bottom 2s ease-in-out infinite;
-                        }
-                        &.left{
-                            left: -10px;
-                            top: -10px;
-                            border-top: 2px solid #444;
-                            border-left: 2px solid #222;
-                            animation: blink_main_left 2s ease-in-out infinite;
-                 
-                        }
-                        &.right{
-                            right: -10px;
-                            bottom: -10px;
-                            border-bottom: 2px solid #444;
-                            border-right: 2px solid #222;
-                            animation: blink_main_right 2s ease-in-out infinite;
-                        }
-                    }
-           
                 }
             }
-        }
-  
-    }
-    section{
-        position: relative; z-index: 100; height: 100vh; 
-        border: 3px solid #f00; 
-        &.about{
-            width: 100%;  position: relative;
-            display: flex; align-items: flex-start; 
-            flex-direction: column;
-            .top-effect-section{
-                width: 25vw; height: 25vw;
-                margin-top: 10vh;
-                padding: 20vh 0 0 0;
-                margin-left: 10vw;
-                position: relative; 
-                background: #000;
-                border: 1px solid #333;
-                overflow: hidden; 
-                &:hover{
-                    background: rgb(0, 34, 255);
-                    img{
-                        transform: scale(1.3);
-                        filter: grayscale(60%);
-                    }
-                    .deco{
+            &.works{
+                height: 1200vh; border: 1px solid #f00;
+                position: relative; z-index: 1000;
+                .project-slider{
+                    margin-top: 400vh; position: relative;
+                    height: calc(100% - 400vh);
+                    background: #fff;
+                    display: flex;
+                    div{
+                        width: 50%; height: auto;
                         border: 1px solid #000;
-                    }
-                }
-                img{
-                    height: 80%;
-                    filter: grayscale(90%);
-                    position: absolute; bottom: 0; z-index: 10; right: 0;
-                    transition: all 0.5s ease;
-                }
-                .deco{
-                    position: absolute;
-                    top: 50%; left: 50%;
-                    width: 92%; height: 92%;
-                    transform: translate(calc(-50% ), -50%);
-                    border: 1px solid #666;
-                    animation: opacityAdjust 3s ease infinite;
-                    @for $i from 1 through 100{
-                        &:nth-child(#{$i}){
-                            animation-delay: 0.05s * $i ;
+                        > div{
+                            border: 1px solid #000;
+                            width: 100%; height: 100vh;
+                        }
+                        &:nth-child(odd){
+                  
                         }
                     }
-                    &:nth-child(3){
-                        width: 90%; height: 90%;
-                    }
-                    &:nth-child(4){
-                        width: 88%; height: 88%;
-                    }
-                    &:nth-child(5){
-                        width: 86%; height: 86%;
-                    }
-                    &:nth-child(6){
-                        width: 84%; height: 84%;
-                    }
-                    &:nth-child(7){
-                        width: 82%; height: 82%;
-                    }
-                    &:nth-child(8){
-                        width: 80%; height: 80%;
-                    }
-                    &:nth-child(9){
-                        width: 78%; height: 78%;
-                    }
-                    &:nth-child(10){
-                        width: 76%; height: 76%;
-                    }
-                    &:nth-child(11){
-                        width: 74%; height: 74%;
-                    }
-                    &:nth-child(12){
-                        width: 72%; height: 72%;
-                    }
-                    &:nth-child(13){
-                        width: 70%; height: 70%;
-                    }
-                    &:nth-child(14){
-                        width: 68%; height: 68%;
+                    .project-title{
+                        position: fixed; background: #000;
+                        border: 1px solid #fff;
+                        width: 50%; height: 100vh;
+                        top: 0; left: 0; 
+                        >div{
+                            position: fixed; 
+                            border: 1px solid #fff;
+                            color: #fff; height: 100vh;
+                        }
                     }
                 }
-    
+
 
             }
-          
         }
+
+
+  
     }
+
     .contact{
         position: fixed; bottom: 0;
         height: auto; left: 50%; transform: translate(-50%, calc(100% - 40px) );
