@@ -238,40 +238,7 @@ body{
                     }
                 }
             }
-            &.works{
-                height: 1200vh; border: 1px solid #f00;
-                position: relative; z-index: 1000;
-                .project-slider{
-                    margin-top: 400vh; position: relative;
-                    height: calc(100% - 400vh);
-                    background: #fff;
-                    display: flex;
-                    div{
-                        width: 50%; height: auto;
-                        border: 1px solid #000;
-                        > div{
-                            border: 1px solid #000;
-                            width: 100%; height: 100vh;
-                        }
-                        &:nth-child(odd){
-                  
-                        }
-                    }
-                    .project-title{
-                        position: fixed; background: #000;
-                        border: 1px solid #fff;
-                        width: 50%; height: 100vh;
-                        top: 0; left: 0; 
-                        >div{
-                            position: fixed; 
-                            border: 1px solid #fff;
-                            color: #fff; height: 100vh;
-                        }
-                    }
-                }
-
-
-            }
+            
         }
 
 
