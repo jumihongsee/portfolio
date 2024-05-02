@@ -13,7 +13,9 @@ function raf(time) {
 
 requestAnimationFrame(raf)
 
-  
+
+
+
 const ham = document.querySelector('.ham');
 const header = document.querySelector('header')
 const contact = document.querySelector('.contact')
@@ -23,14 +25,15 @@ ham.addEventListener('click', () => {
     ham.classList.toggle('on');
     header.classList.toggle('active');
 });
-// contact.addEventListener('click', () => {
+
+// contact.addEventListener('click', () => { 
 //     contact.classList.toggle('active');
 // });
 
 
 
 const heightSetting = (window.innerHeight) * 4;
-const mainSection = document.querySelector('main');
+const introSection = document.querySelector('.intro');
 const textAppear = document.querySelector('.scale-up-appear');
 const textDisAppear = document.querySelector('.scale-up-disappear');
 const maintitle = document.querySelector('.mainTitle h2');
@@ -40,11 +43,20 @@ const blinkObject = document.querySelector('.blink_zoom');
 const decoBox = document.querySelector('.deco')
 const line = document.querySelector('.line4');
 
-mainSection.style.height = heightSetting + 'px';
+introSection.style.height = heightSetting + 'px';
 
 const parallaxBox = document.querySelectorAll('.box');
 const parallaxBoxLength = parallaxBox.length;
 const body = document.querySelector('body');
+
+const txtSectionElements = document.querySelectorAll('[class^="txt-sec-"]');
+const imgSectionElements = document.querySelectorAll('[class^="img-sec-"]');
+const workSection = document.querySelector('.works');
+const aboutSection = document.querySelector('.about');
+const workSectionValue = workSection.getBoundingClientRect().bottom;
+const aboutSectionValue = aboutSection.getBoundingClientRect().bottom;
+const topSectionValue = workSectionValue+aboutSectionValue;
+const windowHeight = window.innerHeight;
 
 window.addEventListener('scroll', () => {
     let scrollHeight = window.scrollY;
@@ -68,13 +80,10 @@ window.addEventListener('scroll', () => {
         maintitleWrapper.classList.remove('active')
         
         
-        
-
     } else {
         textAppear.classList.remove('active');
         textDisAppear.classList.remove('active');
         maintitle.classList.remove('active');
-       
        
     }
 
@@ -86,5 +95,28 @@ window.addEventListener('scroll', () => {
    
     }
 
+    let isImgSectionDetected = false; // 이미지 섹션을 감지했는지 여부를 저장하는 변수
+
+    imgSectionElements.forEach((img, index) => {
+        const imgSectionValue = img.getBoundingClientRect().bottom;
+
+        if (imgSectionValue <= windowHeight) {
+            const sectionNumber = img.classList[0].split('-')[2];
+            body.setAttribute('id', `works-${sectionNumber}`); 
+            isImgSectionDetected = true; 
+        }
+    });
+
+    if (!isImgSectionDetected) {
+        body.removeAttribute('id');
+    }
+
     
 });
+
+$('.autoplay').slick({
+    slidesToShow: 2,
+    slidesToScroll: 1,
+    // autoplay: true,
+    // autoplaySpeed: 3000,
+  });

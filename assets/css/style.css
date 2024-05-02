@@ -133,17 +133,12 @@ body header .menuContents .cont {
   z-index: 1000;
   transition: all 0.5s forwards;
 }
-body main {
-  width: 100vw;
-  height: 100vh;
-  background: #000;
-}
-body main section.main-effect {
+body main section.intro article.main-effect {
   position: fixed;
   width: 100vw;
   height: 100vh;
 }
-body main section.main-effect .main-parallax {
+body main section.intro article.main-effect .main-parallax {
   width: 22vw;
   height: 22vw;
   position: absolute;
@@ -154,23 +149,7 @@ body main section.main-effect .main-parallax {
   align-items: center;
   justify-content: center;
 }
-body main section.main-effect .main-parallax .line4 > div {
-  width: 200vw;
-  height: 1px;
-  background: rgb(56, 56, 56);
-  position: absolute;
-}
-body main section.main-effect .main-parallax .line4 > div.top-left {
-  left: -107.2vw;
-  top: 0;
-  transform: rotate(31deg);
-}
-body main section.main-effect .main-parallax .line4 > div.top-right {
-  right: -107.2vw;
-  top: 0;
-  transform: rotate(-31deg);
-}
-body main section.main-effect .main-parallax .box {
+body main section.intro article.main-effect .main-parallax .box {
   position: fixed;
   background-position: top center;
   background-size: cover;
@@ -186,19 +165,19 @@ body main section.main-effect .main-parallax .box {
   justify-content: center;
   overflow: hidden;
 }
-body main section.main-effect .main-parallax .box img {
+body main section.intro article.main-effect .main-parallax .box img {
   width: 100%;
   position: absolute;
   z-index: 1;
   filter: grayscale(100);
 }
-body main section.main-effect .main-parallax .box.mainTitle {
+body main section.intro article.main-effect .main-parallax .box.mainTitle {
   background: #000;
 }
-body main section.main-effect .main-parallax .box.mainTitle.active {
+body main section.intro article.main-effect .main-parallax .box.mainTitle.active {
   animation: opacityAdjust 0.4s ease forwards;
 }
-body main section.main-effect .main-parallax .box.mainTitle h2 {
+body main section.intro article.main-effect .main-parallax .box.mainTitle h2 {
   font-size: 3vw;
   font-weight: 100;
   width: 30vw;
@@ -213,90 +192,106 @@ body main section.main-effect .main-parallax .box.mainTitle h2 {
   z-index: 100;
   color: #000;
 }
-body main section.main-effect .main-parallax .box.mainTitle h2 span {
+body main section.intro article.main-effect .main-parallax .box.mainTitle h2 span {
   display: block;
 }
-body main section.main-effect .main-parallax .box.mainTitle h2 span.scale-up-appear {
+body main section.intro article.main-effect .main-parallax .box.mainTitle h2 span.scale-up-appear {
   opacity: 0;
   display: none;
   transition: display 1s ease-in-out;
 }
-body main section.main-effect .main-parallax .box.mainTitle h2 span.scale-up-appear.active {
+body main section.intro article.main-effect .main-parallax .box.mainTitle h2 span.scale-up-appear.active {
   opacity: 1;
   display: block;
   animation: appearText forwards;
 }
-body main section.main-effect .main-parallax .box.mainTitle h2 span.scale-up-disappear {
+body main section.intro article.main-effect .main-parallax .box.mainTitle h2 span.scale-up-disappear {
   opacity: 1;
   display: block;
   transition: display 1s ease-in-out;
 }
-body main section.main-effect .main-parallax .box.mainTitle h2 span.scale-up-disappear.active {
+body main section.intro article.main-effect .main-parallax .box.mainTitle h2 span.scale-up-disappear.active {
   opacity: 0;
   display: none;
   animation: appearText reverse forwards;
 }
-body main section.main-effect .main-parallax .box.mainTitle h2.active {
+body main section.intro article.main-effect .main-parallax .box.mainTitle h2.active {
   letter-spacing: 0;
   font-weight: 500;
 }
-body main section.main-effect .main-parallax .blink_zoom div {
+body main section.intro article.main-effect .main-parallax .line4 > div {
+  width: 200vw;
+  height: 1px;
+  background: rgb(56, 56, 56);
+  position: absolute;
+}
+body main section.intro article.main-effect .main-parallax .line4 > div.top-left {
+  left: -107.2vw;
+  top: 0;
+  transform: rotate(31deg);
+}
+body main section.intro article.main-effect .main-parallax .line4 > div.top-right {
+  right: -107.2vw;
+  top: 0;
+  transform: rotate(-31deg);
+}
+body main section.intro article.main-effect .main-parallax .blink_zoom div {
   position: absolute;
   width: 3vw;
   height: 3vw;
   border-radius: 2px;
 }
 @media (max-width : 500px) {
-  body main section.main-effect .main-parallax .blink_zoom div {
+  body main section.intro article.main-effect .main-parallax .blink_zoom div {
     width: 25px;
     height: 25px;
   }
 }
-body main section.main-effect .main-parallax .blink_zoom div.top {
+body main section.intro article.main-effect .main-parallax .blink_zoom div.top {
   right: -10px;
   top: -10px;
   border-top: 2px solid #222;
   border-right: 2px solid #222;
   animation: blink_main_top 2s ease-in-out infinite;
 }
-body main section.main-effect .main-parallax .blink_zoom div.bottom {
+body main section.intro article.main-effect .main-parallax .blink_zoom div.bottom {
   bottom: -10px;
   left: -10px;
   border-left: 2px solid #222;
   border-bottom: 2px solid #222;
   animation: blink_main_bottom 2s ease-in-out infinite;
 }
-body main section.main-effect .main-parallax .blink_zoom div.left {
+body main section.intro article.main-effect .main-parallax .blink_zoom div.left {
   left: -10px;
   top: -10px;
   border-top: 2px solid #222;
   border-left: 2px solid #222;
   animation: blink_main_left 2s ease-in-out infinite;
 }
-body main section.main-effect .main-parallax .blink_zoom div.right {
+body main section.intro article.main-effect .main-parallax .blink_zoom div.right {
   right: -10px;
   bottom: -10px;
   border-bottom: 2px solid #222;
   border-right: 2px solid #222;
   animation: blink_main_right 2s ease-in-out infinite;
 }
-body main section.main-effect .main-parallax .deco {
+body main section.intro article.main-effect .main-parallax .deco {
   position: absolute;
   width: 27vw;
   height: 28vw;
 }
-body main section.main-effect .main-parallax .deco .time {
+body main section.intro article.main-effect .main-parallax .deco .time {
   position: absolute;
   bottom: 0;
   right: 0;
   font-size: 12px;
   color: #000;
 }
-body main section.main-effect .main-parallax .deco .battery {
+body main section.intro article.main-effect .main-parallax .deco .battery {
   position: absolute;
   right: 0;
 }
-body main section.main-effect .main-parallax .deco .battery .battery-box {
+body main section.intro article.main-effect .main-parallax .deco .battery .battery-box {
   width: 20px;
   height: 10px;
   border: 1px solid green;
@@ -304,86 +299,86 @@ body main section.main-effect .main-parallax .deco .battery .battery-box {
   align-items: center;
   justify-content: space-between;
 }
-body main section.main-effect .main-parallax .deco .battery .battery-box .battery-cont {
+body main section.intro article.main-effect .main-parallax .deco .battery .battery-box .battery-cont {
   width: calc(30% - 2px);
   height: 100%;
   background: rgb(125, 242, 125);
 }
-body main section.main-effect .main-parallax .deco .battery .battery-box .battery-cont:last-child {
+body main section.intro article.main-effect .main-parallax .deco .battery .battery-box .battery-cont:last-child {
   background: none;
 }
-body .about {
+body main section.about {
   width: 100vw;
   height: auto;
   min-height: 150vh;
   background: #000;
   padding: 10vh 0 0 0;
 }
-body .about .about-title {
+body main section.about .about-title {
   display: flex;
   margin-left: 5vw;
   justify-content: center;
 }
-body .about .about-title span {
+body main section.about .about-title span {
   font-size: 8vw;
   font-weight: bold;
   color: #fff;
 }
-body .about .about-title span:nth-child(5) {
+body main section.about .about-title span:nth-child(5) {
   margin-right: 2vw;
 }
-body .about .title-line {
+body main section.about .title-line {
   width: 100%;
   height: 1px;
   background: #3f3f3f;
 }
-body .about .year-line {
+body main section.about .year-line {
   display: flex;
   justify-content: center;
   width: 100%;
   align-items: center;
 }
-body .about .year-line span {
+body main section.about .year-line span {
   color: #fff;
   font-size: 15px;
   padding: 20px;
 }
-body .about .year-line .line {
+body main section.about .year-line .line {
   width: 80%;
   height: 1px;
   background: #606060;
 }
-body .about .about-contents {
+body main section.about .about-contents {
   width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
 }
-body .about .about-contents .picture {
+body main section.about .about-contents .picture {
   width: 30%;
   height: auto;
 }
-body .about .about-contents .picture img {
+body main section.about .about-contents .picture img {
   width: calc(100% - 30px);
   filter: grayscale(100);
   border-radius: 10px;
   border: 1px solid #606060;
 }
-body .about .about-contents .description {
+body main section.about .about-contents .description {
   width: 70%;
   height: 50vh;
   display: flex;
   flex-direction: column;
   border-left: 1px solid #606060;
 }
-body .about .about-contents .description .top_hello {
+body main section.about .about-contents .description .top_hello {
   border-bottom: 1px solid #606060;
   padding-bottom: 30px;
   padding-left: 30px;
-  line-height: 2.5;
+  line-height: 2;
 }
-body .about .about-contents .description h2 {
+body main section.about .about-contents .description h2 {
   color: #fff;
   font-weight: bold;
   font-size: 22px;
@@ -392,47 +387,80 @@ body .about .about-contents .description h2 {
   display: flex;
   align-items: center;
 }
-body .about .about-contents .description h2 span {
+body main section.about .about-contents .description h2 span {
   border-radius: 20px;
   padding: 0 20px;
   margin: 0 5px;
   background: #fff;
   color: #000;
 }
-body .about .about-contents .description h2 img {
+body main section.about .about-contents .description h2 img {
   width: 25px;
   margin-left: 5px;
 }
-body .about .about-contents .description p {
+body main section.about .about-contents .description p {
   color: #fff;
-  font-style: italic;
+  font-family: "helvetical-bold";
+  font-size: 20px;
 }
-body .about .about-contents .description .slider {
+body main section.about .about-contents .description .slider {
   height: 20vh;
-  width: 50%;
+  width: 100%;
   padding: 15px 40px;
 }
-body .about .about-contents .description .slider .txt p {
-  font-size: 13px;
-  color: #fff;
-  line-height: 2;
+body main section.about .about-contents .description .slider .txt {
+  padding-right: 20px;
 }
-body .about .about-contents .description .slider h3 {
+body main section.about .about-contents .description .slider .txt p {
+  font-size: 13px;
+  line-height: 2;
+  color: #eee;
+}
+body main section.about .about-contents .description .slider h3 {
   color: #fff;
+  font-size: 20px;
   margin: 20px 0;
   font-weight: 100;
+  font-family: "helvetical-bold";
 }
-body .works {
+body main section.works {
   width: 100%;
   height: 200vh;
   background: #fff;
 }
-body .works h2 {
+body main section.works h2 {
   font-size: 150px;
   width: 100%;
   border-bottom: 1px solid #000;
 }
-body .contact {
+body main section.works .slider {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  background: #fff;
+}
+body main section.works .slider > div {
+  width: 50%;
+  height: 100%;
+  border: 1px solid blue;
+}
+body main section.works .slider > div h2 {
+  font-size: 40px;
+  color: #fff;
+}
+body main section.works .slider .txt {
+  border: 1px solid #f00;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+body main section.works .slider .img-sec {
+  border: 1px solid blue;
+}
+body main section.contact {
   position: fixed;
   bottom: 0;
   height: auto;
@@ -440,7 +468,7 @@ body .contact {
   transform: translate(-50%, calc(100% - 40px));
   height: 100vh;
 }
-body .contact button {
+body main section.contact button {
   color: #dfdfdf;
   border: 1px solid #dfdfdf;
   border-bottom: none;
@@ -450,14 +478,14 @@ body .contact button {
   width: 200px;
   padding: 0;
 }
-body .contact .cont {
+body main section.contact .cont {
   background: rgb(128, 128, 128);
   position: absolute;
   height: calc(100% - 40px);
   width: 50vw;
   border-radius: 0 20px 0 0;
 }
-body .contact.active {
+body main section.contact.active {
   animation: contactUp 1s ease forwards;
 }
 body footer {
