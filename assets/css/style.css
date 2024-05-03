@@ -36,6 +36,32 @@ body {
   background: #000;
   overflow-x: hidden;
 }
+body#works-1 header, body#works-2 header, body#works-3 header, body#works-4 header {
+  backdrop-filter: blur(0);
+}
+body#works-1 header .logo p, body#works-2 header .logo p, body#works-3 header .logo p, body#works-4 header .logo p {
+  color: #000;
+}
+body#works-1 header .ham span, body#works-2 header .ham span, body#works-3 header .ham span, body#works-4 header .ham span {
+  background: #000;
+}
+body#works-1 .txt-sec-1 {
+  opacity: 1;
+  z-index: 10;
+  position: fixed;
+}
+body#works-2 .txt-sec-2 {
+  opacity: 1;
+  z-index: 10;
+}
+body#works-3 .txt-sec-3 {
+  opacity: 1;
+  z-index: 10;
+}
+body#works-4 .txt-sec-4 {
+  opacity: 1;
+  z-index: 10;
+}
 body header {
   position: fixed;
   width: 100vw;
@@ -133,12 +159,12 @@ body header .menuContents .cont {
   z-index: 1000;
   transition: all 0.5s forwards;
 }
-body main section.intro article.main-effect {
+body main section.intro > div.main-effect {
   position: fixed;
   width: 100vw;
   height: 100vh;
 }
-body main section.intro article.main-effect .main-parallax {
+body main section.intro > div.main-effect .main-parallax {
   width: 22vw;
   height: 22vw;
   position: absolute;
@@ -149,7 +175,7 @@ body main section.intro article.main-effect .main-parallax {
   align-items: center;
   justify-content: center;
 }
-body main section.intro article.main-effect .main-parallax .box {
+body main section.intro > div.main-effect .main-parallax .box {
   position: fixed;
   background-position: top center;
   background-size: cover;
@@ -160,24 +186,25 @@ body main section.intro article.main-effect .main-parallax .box {
   min-width: 200px;
   min-height: 200px;
   border: 1px solid rgb(140, 140, 140);
-  display: flex;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  display: flex;
+  opacity: 1;
 }
-body main section.intro article.main-effect .main-parallax .box img {
+body main section.intro > div.main-effect .main-parallax .box img {
   width: 100%;
   position: absolute;
   z-index: 1;
   filter: grayscale(100);
 }
-body main section.intro article.main-effect .main-parallax .box.mainTitle {
+body main section.intro > div.main-effect .main-parallax .box.mainTitle {
   background: #000;
 }
-body main section.intro article.main-effect .main-parallax .box.mainTitle.active {
+body main section.intro > div.main-effect .main-parallax .box.mainTitle.active {
   animation: opacityAdjust 0.4s ease forwards;
 }
-body main section.intro article.main-effect .main-parallax .box.mainTitle h2 {
+body main section.intro > div.main-effect .main-parallax .box.mainTitle h2 {
   font-size: 3vw;
   font-weight: 100;
   width: 30vw;
@@ -192,106 +219,106 @@ body main section.intro article.main-effect .main-parallax .box.mainTitle h2 {
   z-index: 100;
   color: #000;
 }
-body main section.intro article.main-effect .main-parallax .box.mainTitle h2 span {
+body main section.intro > div.main-effect .main-parallax .box.mainTitle h2 span {
   display: block;
 }
-body main section.intro article.main-effect .main-parallax .box.mainTitle h2 span.scale-up-appear {
+body main section.intro > div.main-effect .main-parallax .box.mainTitle h2 span.scale-up-appear {
   opacity: 0;
   display: none;
   transition: display 1s ease-in-out;
 }
-body main section.intro article.main-effect .main-parallax .box.mainTitle h2 span.scale-up-appear.active {
+body main section.intro > div.main-effect .main-parallax .box.mainTitle h2 span.scale-up-appear.active {
   opacity: 1;
   display: block;
   animation: appearText forwards;
 }
-body main section.intro article.main-effect .main-parallax .box.mainTitle h2 span.scale-up-disappear {
+body main section.intro > div.main-effect .main-parallax .box.mainTitle h2 span.scale-up-disappear {
   opacity: 1;
   display: block;
   transition: display 1s ease-in-out;
 }
-body main section.intro article.main-effect .main-parallax .box.mainTitle h2 span.scale-up-disappear.active {
+body main section.intro > div.main-effect .main-parallax .box.mainTitle h2 span.scale-up-disappear.active {
   opacity: 0;
   display: none;
   animation: appearText reverse forwards;
 }
-body main section.intro article.main-effect .main-parallax .box.mainTitle h2.active {
+body main section.intro > div.main-effect .main-parallax .box.mainTitle h2.active {
   letter-spacing: 0;
   font-weight: 500;
 }
-body main section.intro article.main-effect .main-parallax .line4 > div {
+body main section.intro > div.main-effect .main-parallax .line4 > div {
   width: 200vw;
   height: 1px;
   background: rgb(56, 56, 56);
   position: absolute;
 }
-body main section.intro article.main-effect .main-parallax .line4 > div.top-left {
+body main section.intro > div.main-effect .main-parallax .line4 > div.top-left {
   left: -107.2vw;
   top: 0;
   transform: rotate(31deg);
 }
-body main section.intro article.main-effect .main-parallax .line4 > div.top-right {
+body main section.intro > div.main-effect .main-parallax .line4 > div.top-right {
   right: -107.2vw;
   top: 0;
   transform: rotate(-31deg);
 }
-body main section.intro article.main-effect .main-parallax .blink_zoom div {
+body main section.intro > div.main-effect .main-parallax .blink_zoom div {
   position: absolute;
   width: 3vw;
   height: 3vw;
   border-radius: 2px;
 }
 @media (max-width : 500px) {
-  body main section.intro article.main-effect .main-parallax .blink_zoom div {
+  body main section.intro > div.main-effect .main-parallax .blink_zoom div {
     width: 25px;
     height: 25px;
   }
 }
-body main section.intro article.main-effect .main-parallax .blink_zoom div.top {
+body main section.intro > div.main-effect .main-parallax .blink_zoom div.top {
   right: -10px;
   top: -10px;
   border-top: 2px solid #222;
   border-right: 2px solid #222;
   animation: blink_main_top 2s ease-in-out infinite;
 }
-body main section.intro article.main-effect .main-parallax .blink_zoom div.bottom {
+body main section.intro > div.main-effect .main-parallax .blink_zoom div.bottom {
   bottom: -10px;
   left: -10px;
   border-left: 2px solid #222;
   border-bottom: 2px solid #222;
   animation: blink_main_bottom 2s ease-in-out infinite;
 }
-body main section.intro article.main-effect .main-parallax .blink_zoom div.left {
+body main section.intro > div.main-effect .main-parallax .blink_zoom div.left {
   left: -10px;
   top: -10px;
   border-top: 2px solid #222;
   border-left: 2px solid #222;
   animation: blink_main_left 2s ease-in-out infinite;
 }
-body main section.intro article.main-effect .main-parallax .blink_zoom div.right {
+body main section.intro > div.main-effect .main-parallax .blink_zoom div.right {
   right: -10px;
   bottom: -10px;
   border-bottom: 2px solid #222;
   border-right: 2px solid #222;
   animation: blink_main_right 2s ease-in-out infinite;
 }
-body main section.intro article.main-effect .main-parallax .deco {
+body main section.intro > div.main-effect .main-parallax .deco {
   position: absolute;
   width: 27vw;
   height: 28vw;
 }
-body main section.intro article.main-effect .main-parallax .deco .time {
+body main section.intro > div.main-effect .main-parallax .deco .time {
   position: absolute;
   bottom: 0;
   right: 0;
   font-size: 12px;
   color: #000;
 }
-body main section.intro article.main-effect .main-parallax .deco .battery {
+body main section.intro > div.main-effect .main-parallax .deco .battery {
   position: absolute;
   right: 0;
 }
-body main section.intro article.main-effect .main-parallax .deco .battery .battery-box {
+body main section.intro > div.main-effect .main-parallax .deco .battery .battery-box {
   width: 20px;
   height: 10px;
   border: 1px solid green;
@@ -299,12 +326,12 @@ body main section.intro article.main-effect .main-parallax .deco .battery .batte
   align-items: center;
   justify-content: space-between;
 }
-body main section.intro article.main-effect .main-parallax .deco .battery .battery-box .battery-cont {
+body main section.intro > div.main-effect .main-parallax .deco .battery .battery-box .battery-cont {
   width: calc(30% - 2px);
   height: 100%;
   background: rgb(125, 242, 125);
 }
-body main section.intro article.main-effect .main-parallax .deco .battery .battery-box .battery-cont:last-child {
+body main section.intro > div.main-effect .main-parallax .deco .battery .battery-box .battery-cont:last-child {
   background: none;
 }
 body main section.about {
@@ -313,6 +340,8 @@ body main section.about {
   min-height: 150vh;
   background: #000;
   padding: 10vh 0 0 0;
+  position: relative;
+  z-index: 1000;
 }
 body main section.about .about-title {
   display: flex;
@@ -348,37 +377,40 @@ body main section.about .year-line .line {
   height: 1px;
   background: #606060;
 }
-body main section.about .about-contents {
+body main section.about .about-contents > .wrapper {
   width: 80%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
 }
-body main section.about .about-contents .picture {
+body main section.about .about-contents > .wrapper .picture {
   width: 30%;
   height: auto;
 }
-body main section.about .about-contents .picture img {
-  width: calc(100% - 30px);
+body main section.about .about-contents > .wrapper .picture img {
+  width: 100%;
   filter: grayscale(100);
-  border-radius: 10px;
-  border: 1px solid #606060;
 }
-body main section.about .about-contents .description {
+body main section.about .about-contents > .wrapper .description {
   width: 70%;
-  height: 50vh;
+  height: auto;
+  min-height: 50vh;
   display: flex;
   flex-direction: column;
   border-left: 1px solid #606060;
 }
-body main section.about .about-contents .description .top_hello {
+body main section.about .about-contents > .wrapper .description .top_hello {
   border-bottom: 1px solid #606060;
   padding-bottom: 30px;
   padding-left: 30px;
   line-height: 2;
 }
-body main section.about .about-contents .description h2 {
+body main section.about .about-contents > .wrapper .description .top_hello a {
+  color: #fff;
+  font-size: 13px;
+}
+body main section.about .about-contents > .wrapper .description h2 {
   color: #fff;
   font-weight: bold;
   font-size: 22px;
@@ -387,48 +419,118 @@ body main section.about .about-contents .description h2 {
   display: flex;
   align-items: center;
 }
-body main section.about .about-contents .description h2 span {
+body main section.about .about-contents > .wrapper .description h2 span {
   border-radius: 20px;
   padding: 0 20px;
   margin: 0 5px;
   background: #fff;
   color: #000;
 }
-body main section.about .about-contents .description h2 img {
+body main section.about .about-contents > .wrapper .description h2 img {
   width: 25px;
   margin-left: 5px;
 }
-body main section.about .about-contents .description p {
+body main section.about .about-contents > .wrapper .description p {
   color: #fff;
   font-family: "helvetical-bold";
   font-size: 20px;
 }
-body main section.about .about-contents .description .slider {
+body main section.about .about-contents > .wrapper .description .slider {
   height: 20vh;
   width: 100%;
   padding: 15px 40px;
 }
-body main section.about .about-contents .description .slider .txt {
+body main section.about .about-contents > .wrapper .description .slider .txt {
   padding-right: 20px;
 }
-body main section.about .about-contents .description .slider .txt p {
+body main section.about .about-contents > .wrapper .description .slider .txt p {
   font-size: 13px;
   line-height: 2;
   color: #eee;
 }
-body main section.about .about-contents .description .slider h3 {
+body main section.about .about-contents > .wrapper .description .slider h3 {
   color: #fff;
   font-size: 20px;
   margin: 20px 0;
   font-weight: 100;
   font-family: "helvetical-bold";
 }
+body main section.about .about-contents .education {
+  width: 80%;
+  margin: 30px auto;
+  border: 1px solid #606060;
+  border-left: none;
+  border-right: none;
+}
+body main section.about .about-contents .education h2.title {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+body main section.about .about-contents .education .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+body main section.about .about-contents .education .wrapper ul {
+  width: 50%;
+  padding: 30px 0;
+  padding-right: 40px;
+}
+body main section.about .about-contents .education .wrapper ul:not(:last-child) {
+  border-right: 1px solid #606060;
+}
+body main section.about .about-contents .education .wrapper ul:not(:first-child) {
+  padding: 30px 40px;
+}
+body main section.about .about-contents .education .wrapper ul li {
+  color: #fff;
+  padding: 5px 0;
+  line-height: 1.5;
+}
+body main section.about .about-contents .education .wrapper ul li h2 {
+  font-size: 15px;
+  font-weight: 200;
+}
+body main section.about .about-contents .education .wrapper ul li p {
+  font-size: 12px;
+}
+body main section.about .about-contents .skills {
+  width: 80%;
+  margin: 0 auto;
+  padding-bottom: 15px;
+}
+body main section.about .about-contents .skills ul {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+body main section.about .about-contents .skills ul li {
+  border: 1px solid #606060;
+  background: #fff;
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+}
+body main section.about .about-contents .skills ul li h2 {
+  font-size: 30px;
+}
+body main section.about .about-contents .skills ul:first-child li {
+  width: 25%;
+  margin-top: 0;
+}
+body main section.about .about-contents .skills ul:nth-child(2) li {
+  width: 20%;
+}
+body main section.about .about-contents .skills ul:nth-child(3) li {
+  width: 25%;
+}
 body main section.works {
   width: 100%;
-  height: 200vh;
+  height: auto;
   background: #fff;
 }
-body main section.works h2 {
+body main section.works > h2 {
   font-size: 150px;
   width: 100%;
   border-bottom: 1px solid #000;
@@ -444,21 +546,50 @@ body main section.works .slider {
 body main section.works .slider > div {
   width: 50%;
   height: 100%;
-  border: 1px solid blue;
 }
 body main section.works .slider > div h2 {
   font-size: 40px;
-  color: #fff;
+  color: #000;
 }
 body main section.works .slider .txt {
-  border: 1px solid #f00;
   position: fixed;
   top: 0;
   left: 0;
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0;
 }
-body main section.works .slider .img-sec {
-  border: 1px solid blue;
+body main section.works .slider .txt.txt-sec-1 {
+  opacity: 1;
+  position: absolute;
+}
+body main section.works .slider .txt.txt-sec-2 .main-text h2 {
+  color: #ffffff;
+}
+body main section.works .slider .main-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body main section.works .slider .main-text h2 {
+  font-size: 80px;
+  line-height: 1;
+}
+body main section.works .slider .main-text .achieve {
+  display: flex;
+  margin: 50px 0 0 0;
+}
+body main section.works .slider .main-text .achieve li {
+  background: #000;
+  padding: 5px;
+  margin-right: 5px;
+}
+body main section.works .slider .main-text .achieve li p {
+  color: #fff;
+  font-size: 14px;
 }
 body main section.contact {
   position: fixed;
@@ -487,6 +618,16 @@ body main section.contact .cont {
 }
 body main section.contact.active {
   animation: contactUp 1s ease forwards;
+}
+body main .goTo_works {
+  margin-top: 20vh;
+}
+body main .goTo_works h3 {
+  font-size: 150px;
+  color: #fff;
+  font-weight: 100;
+  text-align: center;
+  line-height: 1;
 }
 body footer {
   color: rgb(128, 128, 128);

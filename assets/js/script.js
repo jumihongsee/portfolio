@@ -14,8 +14,6 @@ function raf(time) {
 requestAnimationFrame(raf)
 
 
-
-
 const ham = document.querySelector('.ham');
 const header = document.querySelector('header')
 const contact = document.querySelector('.contact')
@@ -26,12 +24,13 @@ ham.addEventListener('click', () => {
     header.classList.toggle('active');
 });
 
+
 // contact.addEventListener('click', () => { 
 //     contact.classList.toggle('active');
 // });
 
 
-
+// main 
 const heightSetting = (window.innerHeight) * 4;
 const introSection = document.querySelector('.intro');
 const textAppear = document.querySelector('.scale-up-appear');
@@ -49,6 +48,8 @@ const parallaxBox = document.querySelectorAll('.box');
 const parallaxBoxLength = parallaxBox.length;
 const body = document.querySelector('body');
 
+
+// works
 const txtSectionElements = document.querySelectorAll('[class^="txt-sec-"]');
 const imgSectionElements = document.querySelectorAll('[class^="img-sec-"]');
 const workSection = document.querySelector('.works');
@@ -57,6 +58,10 @@ const workSectionValue = workSection.getBoundingClientRect().bottom;
 const aboutSectionValue = aboutSection.getBoundingClientRect().bottom;
 const topSectionValue = workSectionValue+aboutSectionValue;
 const windowHeight = window.innerHeight;
+
+const slider = document.querySelectorAll('.slider')
+
+
 
 window.addEventListener('scroll', () => {
     let scrollHeight = window.scrollY;
@@ -72,28 +77,40 @@ window.addEventListener('scroll', () => {
         });
 
     }
-    
-    if (scrollHeight > (heightSetting / 2.5)) {
+
+
+    // 40% 이상
+    if (scrollHeight > (heightSetting * 0.4)) {
         textAppear.classList.add('active');
         textDisAppear.classList.add('active');
         maintitle.classList.add('active');
         maintitleWrapper.classList.remove('active')
-        
+        parallaxBox.forEach(box => {
+            box.style.opacity = 1;
+        });
         
     } else {
         textAppear.classList.remove('active');
         textDisAppear.classList.remove('active');
         maintitle.classList.remove('active');
+
        
     }
 
+    // 80% 이상
     if (scrollHeight > (heightSetting * 0.8)) {
         blinkObject.style.display = "none"
         decoBox.style.display = "none"
         line.style.display = "none"
         maintitleWrapper.classList.add('active')
-   
+        parallaxBox.forEach(box => {
+            box.style.opacity = 0;
+        });
+    } else{
+       
     }
+
+
 
     let isImgSectionDetected = false; // 이미지 섹션을 감지했는지 여부를 저장하는 변수
 
@@ -104,6 +121,8 @@ window.addEventListener('scroll', () => {
             const sectionNumber = img.classList[0].split('-')[2];
             body.setAttribute('id', `works-${sectionNumber}`); 
             isImgSectionDetected = true; 
+
+
         }
     });
 
