@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+
+// import './App.css';
+import './main.scss'
+import { ReactLenis, useLenis } from '@studio-freight/react-lenis'
+
+import Header from './components/header'
+import Footer from './components/footer'
+import MotionIntro from './components/motion'
+import { useState } from 'react'
 
 function App() {
+
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ReactLenis root>
+      <div className="App">
+        <Header></Header>
+        <MotionIntro ></MotionIntro>
+        <Footer></Footer>
+      </div>
+    </ReactLenis>
   );
 }
 
