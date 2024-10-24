@@ -21,7 +21,6 @@ function MotionIntro() {
         if (box) {
           box.style.transform = `perspective(100px) translate3d(0,0,${
             scrollHeight / (2 * (parallaxBoxLength - index))
-
           }px)`;
         }
         let scale = parseInt((scrollHeight / (2 * (parallaxBoxLength - index))) / 3);
@@ -34,7 +33,6 @@ function MotionIntro() {
           setSection(2)
         }else{
           console.log('3구간')
-       
           setSection(3)
         }
         

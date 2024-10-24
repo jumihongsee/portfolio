@@ -3,7 +3,7 @@ function Footer(){
     return(
         <footer>
             <p>ⓒ 2024 HongJumi All rights reserved.</p>
-            <img  src="/contact.png" />
+            {/* <img  src="/contact.png" /> */}
         </footer>
     
     ) 
@@ -11,4 +11,4 @@ function Footer(){
 }
 
 
-export default Footer;
+export default Footer;``
